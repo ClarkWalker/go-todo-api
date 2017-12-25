@@ -1,7 +1,7 @@
 package main
 
 import (
-	_ "github.com/ClarkWalker/scorboard-api/database"
+	_ "github.com/ClarkWalker/todo-api/database"
 	_ "github.com/jinzhu/gorm"
 	_ "github.com/jinzhu/gorm/dialects/postgres"
 )
