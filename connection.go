@@ -19,5 +19,6 @@ func Connection() {
 	if err != nil {
 		panic("Oh nopers! U'r database is not finding :o")
 	}
-	defer Db.Close()
+
+	return Db
 }
