@@ -19,7 +19,6 @@ func Migrations() {
 	// 	panic("Oh noos you got a database nopers")
 	// }
 	// defer db.Close()
-	db := Connection()
 	// Migrate the schema
 	db.AutoMigrate(&Product{})
 
