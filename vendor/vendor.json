@@ -1,0 +1,49 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "F0N5V10ap7J7/rAVRGa7QdmKqlU=",
+			"path": "github.com/gorilla/mux",
+			"revision": "7904d2e42e7ebbdb4a6eb3e57eb201b11df25c57",
+			"revisionTime": "2017-12-04T16:11:14Z"
+		},
+		{
+			"checksumSHA1": "KBZAPkgG/bO26yf2KYKLZPyQw9k=",
+			"path": "github.com/jinzhu/gorm",
+			"revision": "0a51f6cdc55d1650d9ed3b4c13026cfa9133b01e",
+			"revisionTime": "2017-10-10T13:28:39Z"
+		},
+		{
+			"checksumSHA1": "9xqgLVMO6tyn6Jtyxy94U72DB0w=",
+			"path": "github.com/jinzhu/gorm/dialects/postgres",
+			"revision": "0a51f6cdc55d1650d9ed3b4c13026cfa9133b01e",
+			"revisionTime": "2017-10-10T13:28:39Z"
+		},
+		{
+			"checksumSHA1": "VIp1lZm6joWhlNdwhady8u//qRw=",
+			"path": "github.com/jinzhu/inflection",
+			"revision": "1c35d901db3da928c72a72d8458480cc9ade058f",
+			"revisionTime": "2017-01-02T12:52:26Z"
+		},
+		{
+			"checksumSHA1": "IfZcD4U1dtllJKlPNeD2aU4Jn98=",
+			"path": "github.com/lib/pq",
+			"revision": "83612a56d3dd153a94a629cd64925371c9adad78",
+			"revisionTime": "2017-11-26T05:04:59Z"
+		},
+		{
+			"checksumSHA1": "EnMmNGgpDa5sNw0Zs5RhvNDcP2g=",
+			"path": "github.com/lib/pq/hstore",
+			"revision": "83612a56d3dd153a94a629cd64925371c9adad78",
+			"revisionTime": "2017-11-26T05:04:59Z"
+		},
+		{
+			"checksumSHA1": "ATnwV0POluBNQEMjPdylodz0oK0=",
+			"path": "github.com/lib/pq/oid",
+			"revision": "83612a56d3dd153a94a629cd64925371c9adad78",
+			"revisionTime": "2017-11-26T05:04:59Z"
+		}
+	],
+	"rootPath": "github.com/ClarkWalker/todo-api"
+}
