@@ -4,8 +4,10 @@ import (
 	"encoding/json"
 	"fmt"
 	"net/http"
+	"os"
 
 	"github.com/gorilla/mux"
+	"github.com/jinzhu/gorm"
 )
 
 // Index ...
@@ -16,14 +18,23 @@ func Index(w http.ResponseWriter, r *http.Request) {
 // TodoIndex ...
 func TodoIndex(w http.ResponseWriter, r *http.Request) {
 	println("TodoIndex, GET to /todos")
-
-	todos := Todos{
-		Todo{Name: "complete go api"},
-		Todo{Name: "complete scoreboard api in go"},
+	dbName := os.Getenv("DATABASE_URL")
+	if dbName == "" {
+		dbName = "host=localhost dbname=golang-todo-api sslmode=disable"
 	}
+	fmt.Println("database connection: ", dbName)
+
+	db, err := gorm.Open("postgres", dbName)
+	if err != nil {
+		panic("Oh nopers! U'r database is not finding :o")
+	}
+	defer db.Close()
+
+	todos := []Todos{}
+	getTodos := db.Find(&todos)
 
 	w.Header().Set("Content-Type", "application/json")
-	if err := json.NewEncoder(w).Encode(todos); err != nil {
+	if err := json.NewEncoder(w).Encode(getTodos); err != nil {
 		panic(err)
 	}
 }

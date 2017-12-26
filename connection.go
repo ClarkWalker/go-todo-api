@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"os"
 
 	"github.com/jinzhu/gorm"
@@ -13,12 +14,12 @@ func Connection() {
 	if dbName == "" {
 		dbName = "host=localhost dbname=golang-todo-api sslmode=disable"
 	}
-	println("database connection: ", dbName)
+	fmt.Println("database connection: ", dbName)
 
-	Db, err := gorm.Open("postgres", dbName)
+	db, err := gorm.Open("postgres", dbName)
 	if err != nil {
 		panic("Oh nopers! U'r database is not finding :o")
 	}
 
-	return Db
+	defer db.Close()
 }

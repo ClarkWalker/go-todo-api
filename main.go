@@ -4,7 +4,6 @@ import (
 	"log"
 	"net/http"
 	"os"
-	"time"
 
 	"github.com/gorilla/mux"
 )
@@ -15,6 +14,8 @@ func main() {
 		port = "8080"
 	}
 	println("now running on port", ":"+port)
+	Connection()
+	Migrations()
 
 	router := mux.NewRouter().StrictSlash(true)
 	router.HandleFunc("/", Index)
@@ -23,13 +24,3 @@ func main() {
 
 	log.Fatal(http.ListenAndServe(":"+port, router))
 }
-
-// Todo ...
-type Todo struct {
-	Name      string    `json:"name"`
-	Completed bool      `json:"completed"`
-	Due       time.Time `json:"due"`
-}
-
-// Todos ...
-type Todos []Todo
