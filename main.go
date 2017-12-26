@@ -14,7 +14,6 @@ func main() {
 		port = "8080"
 	}
 	println("now running on port", ":"+port)
-	Connection()
 	Migrations()
 
 	router := mux.NewRouter().StrictSlash(true)

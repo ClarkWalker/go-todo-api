@@ -26,7 +26,7 @@ func Migrations() {
 	if dbName == "" {
 		dbName = "host=localhost dbname=golang-todo-api sslmode=disable"
 	}
-	fmt.Println("migrations db", dbName)
+	fmt.Println("--migrations.go dbName =", dbName)
 
 	db, err := gorm.Open("postgres", dbName)
 	if err != nil {
@@ -34,14 +34,9 @@ func Migrations() {
 	}
 	defer db.Close()
 
-	// clear db
-	db.DropTable(&Todos{})
-	// Migrate the schema
-	db.AutoMigrate(&Todos{})
-	// Seed the table
-	db.Create(&Todos{
-		Name: "complete go api"
-		// Todo{Name: "complete scoreboard api in go"},
-	})
-
+	db.DropTable(&Todo{})
+	db.AutoMigrate(&Todo{})
+	db.Create(&Todo{Name: "make go api"})
+	db.Create(&Todo{Name: "make it a CRUD api"})
+	db.Create(&Todo{Name: "take out the trash"})
 } // end Migrations

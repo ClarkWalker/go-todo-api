@@ -30,11 +30,15 @@ func TodoIndex(w http.ResponseWriter, r *http.Request) {
 	}
 	defer db.Close()
 
-	todos := []Todos{}
-	getTodos := db.Find(&todos)
+	var todos []Todos
+	var getAllTodos = db.Find(&todos)
+	// todos := Todos{
+	// 	Todo{Name: "complete go api"},
+	// 	Todo{Name: "complete scoreboard api in go"},
+	// }
 
-	w.Header().Set("Content-Type", "application/json")
-	if err := json.NewEncoder(w).Encode(getTodos); err != nil {
+	// w.Header().Set("Content-Type", "application/json")
+	if err := json.NewEncoder(w).Encode(getAllTodos); err != nil {
 		panic(err)
 	}
 }
