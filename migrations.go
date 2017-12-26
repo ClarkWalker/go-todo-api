@@ -11,6 +11,7 @@ import (
 
 // Todo ...
 type Todo struct {
+	gorm.Model
 	Name      string    `json:"name"`
 	Completed bool      `json:"completed"`
 	Due       time.Time `json:"due"`
@@ -39,8 +40,8 @@ func Migrations() {
 	db.AutoMigrate(&Todos{})
 	// Seed the table
 	db.Create(&Todos{
-		Todo{Name: "complete go api"},
-		Todo{Name: "complete scoreboard api in go"},
+		Name: "complete go api"
+		// Todo{Name: "complete scoreboard api in go"},
 	})
 
 } // end Migrations
